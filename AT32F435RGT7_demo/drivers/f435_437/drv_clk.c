@@ -13,7 +13,7 @@
 #include "drv_common.h"
 
 #define DBG_TAG "board"
-#define DBG_LVL DBG_INFO
+#define DBG_LVL DBG_LOG
 #include <rtdbg.h>
 
 void system_clock_config(int target_freq_Mhz)
@@ -54,7 +54,7 @@ void system_clock_config(int target_freq_Mhz)
     if pll clock source selects hext with other frequency values, or configure pll to other
     frequency values, please use the at32 new clock  configuration tool for configuration.  */
 #ifdef SOC_SERIES_AT32F435
-    crm_pll_config(CRM_PLL_SOURCE_HEXT, 72, 1, CRM_PLL_FR_2);
+    crm_pll_config(CRM_PLL_SOURCE_HEXT, 96, 1, CRM_PLL_FR_4);
 #endif
 #ifdef SOC_SERIES_AT32F437
     crm_pll_config(CRM_PLL_SOURCE_HEXT, 125, 1, CRM_PLL_FR_4);
